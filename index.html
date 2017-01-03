@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <button onclick="toggle();">Toggle leaving/entering</button><br/>
+    <button name="toggle" onclick="toggle();">Toggle leaving/entering</button><label for="toggle" id="label">Leaving</label><br/>
     <script>
         nums = [];
         for (var st in state_data) {
@@ -45,7 +45,7 @@
 
         var showLeave = true;
         var showEnter = false;
-
+        var arr = [];
         g.selectAll("path")
             .data(stateshighres.features)
             .enter()
@@ -57,6 +57,7 @@
             var name = d.properties.NAME;
             var data = state_data[name];
             var entering = data["entering"].data / totalLeaving - avgLeavingFactor; // 0.02 is "average"
+            arr.push(entering);
             var enteringFactor = Math.floor(entering * 50 * 255);
             var leaving = (data["leaving"].data.perc - avgLeavingPerc) / 100;
             var leavingFactor = Math.floor(leaving * 5 * 255);
@@ -67,19 +68,26 @@
                 return "rgb(" + enteringFactor + ", 0, " + (-1 * enteringFactor) + ")";
             }
         }
+
         function toggle() {
-          showLeave = !showLeave;
-          showEnter = !showEnter;
-          recalc();
+            showLeave = !showLeave;
+            showEnter = !showEnter;
+            if (showEnter) {
+                document.getElementById("label").innerText = "Entering";
+            } else {
+                document.getElementById("label").innerText = "Leaving";
+            }
+            recalc();
         }
-        function recalc(){
-          g.selectAll("path").remove();
-          g.selectAll("path")
-              .data(stateshighres.features)
-              .enter()
-              .append("path")
-              .attr("fill", getFill)
-              .attr("d", geoPath);
+
+        function recalc() {
+            g.selectAll("path").remove();
+            g.selectAll("path")
+                .data(stateshighres.features)
+                .enter()
+                .append("path")
+                .attr("fill", getFill)
+                .attr("d", geoPath);
         }
     </script>
 </body>
