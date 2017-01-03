@@ -1,9 +1,11 @@
 const xlsx = require('xlsx');
 const fs = require('fs');
+const pops = require('./pop_data.js').pops;
 
 const workbook = xlsx.readFile("College-Report-by-State-2015.xls");
 const sheet = workbook.Sheets[workbook.SheetNames[0]];
 
+// Extract data from Excel sheet
 var data = {};
 for (var row = 5; row < 56; row++) { // Rows 5-55 contain data
     var state = sheet["A" + row].v; // State name (located in col A)
@@ -42,9 +44,15 @@ for (var row = 5; row < 56; row++) { // Rows 5-55 contain data
         "data": sheet["M" + row].v,
         "description": "# of students entering compared to leaving"
     };
+    info["population"] = { // From separate data source (see pop_data.js)
+        "data": pops[state],
+        "description": "Approx. juvenile (<18) population of state in 2015"
+    };
 
     data[state] = info;
 }
+
+// Write extracted data to file
 var contents = "var state_data = " + JSON.stringify(data) + ";";
 fs.writeFile("state_data.js", contents, function(err) {
     if (!err) {

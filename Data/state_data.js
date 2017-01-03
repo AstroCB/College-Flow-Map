@@ -33,6 +33,10 @@ var state_data = {
         "net": {
             "data": 3766,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 1103496,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Alaska": {
@@ -69,6 +73,10 @@ var state_data = {
         "net": {
             "data": -560,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 186266,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Arizona": {
@@ -105,6 +113,10 @@ var state_data = {
         "net": {
             "data": 2032,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 1622850,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Arkansas": {
@@ -141,6 +153,10 @@ var state_data = {
         "net": {
             "data": -828,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 705300,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "California": {
@@ -177,6 +193,10 @@ var state_data = {
         "net": {
             "data": -4847,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 9120916,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Colorado": {
@@ -213,6 +233,10 @@ var state_data = {
         "net": {
             "data": -908,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 1257065,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Connecticut": {
@@ -249,6 +273,10 @@ var state_data = {
         "net": {
             "data": -1509,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 764059,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Delaware": {
@@ -285,6 +313,10 @@ var state_data = {
         "net": {
             "data": 301,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 204386,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "District of Columbia": {
@@ -321,6 +353,10 @@ var state_data = {
         "net": {
             "data": 3925,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 118107,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Florida": {
@@ -357,6 +393,10 @@ var state_data = {
         "net": {
             "data": -4135,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 4105129,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Georgia": {
@@ -393,6 +433,10 @@ var state_data = {
         "net": {
             "data": -2496,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 2504172,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Hawaii": {
@@ -429,6 +473,10 @@ var state_data = {
         "net": {
             "data": -1034,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 310833,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Idaho": {
@@ -465,6 +513,10 @@ var state_data = {
         "net": {
             "data": 928,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 432837,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Illinois": {
@@ -501,6 +553,10 @@ var state_data = {
         "net": {
             "data": -12068,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 2958673,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Indiana": {
@@ -537,6 +593,10 @@ var state_data = {
         "net": {
             "data": 4231,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 1579456,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Iowa": {
@@ -573,6 +633,10 @@ var state_data = {
         "net": {
             "data": 3548,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 728796,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Kansas": {
@@ -609,6 +673,10 @@ var state_data = {
         "net": {
             "data": 739,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 719557,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Kentucky": {
@@ -645,6 +713,10 @@ var state_data = {
         "net": {
             "data": -847,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 1011667,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Louisiana": {
@@ -681,6 +753,10 @@ var state_data = {
         "net": {
             "data": 706,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 1114813,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Maine": {
@@ -717,6 +793,10 @@ var state_data = {
         "net": {
             "data": -148,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 256380,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Maryland": {
@@ -753,6 +833,10 @@ var state_data = {
         "net": {
             "data": -3622,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 1348226,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Massachusetts": {
@@ -789,6 +873,10 @@ var state_data = {
         "net": {
             "data": 9320,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 1387087,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Michigan": {
@@ -825,6 +913,10 @@ var state_data = {
         "net": {
             "data": -695,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 2207304,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Minnesota": {
@@ -861,6 +953,10 @@ var state_data = {
         "net": {
             "data": -2704,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 1284387,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Mississippi": {
@@ -897,6 +993,10 @@ var state_data = {
         "net": {
             "data": 1361,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 726848,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Missouri": {
@@ -933,6 +1033,10 @@ var state_data = {
         "net": {
             "data": 536,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 1391476,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Montana": {
@@ -969,6 +1073,10 @@ var state_data = {
         "net": {
             "data": 502,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 226420,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Nebraska": {
@@ -1005,6 +1113,10 @@ var state_data = {
         "net": {
             "data": 420,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 470337,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Nevada": {
@@ -1041,6 +1153,10 @@ var state_data = {
         "net": {
             "data": -2109,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 669164,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "New Hampshire": {
@@ -1077,6 +1193,10 @@ var state_data = {
         "net": {
             "data": 69,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 263998,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "New Jersey": {
@@ -1113,6 +1233,10 @@ var state_data = {
         "net": {
             "data": -8993,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 1998821,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "New Mexico": {
@@ -1149,6 +1273,10 @@ var state_data = {
         "net": {
             "data": -744,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 496908,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "New York": {
@@ -1185,6 +1313,10 @@ var state_data = {
         "net": {
             "data": 8956,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 4210817,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "North Carolina": {
@@ -1221,6 +1353,10 @@ var state_data = {
         "net": {
             "data": 882,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 2290568,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "North Dakota": {
@@ -1257,6 +1393,10 @@ var state_data = {
         "net": {
             "data": 855,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 173926,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Ohio": {
@@ -1293,6 +1433,10 @@ var state_data = {
         "net": {
             "data": 1285,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 2628477,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Oklahoma": {
@@ -1329,6 +1473,10 @@ var state_data = {
         "net": {
             "data": 1313,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 961321,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Oregon": {
@@ -1365,6 +1513,10 @@ var state_data = {
         "net": {
             "data": 2507,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 862856,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Pennsylvania": {
@@ -1401,6 +1553,10 @@ var state_data = {
         "net": {
             "data": 5273,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 2690274,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Rhode Island": {
@@ -1437,6 +1593,10 @@ var state_data = {
         "net": {
             "data": 2352,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 211044,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "South Carolina": {
@@ -1473,6 +1633,10 @@ var state_data = {
         "net": {
             "data": 1835,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 1091588,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "South Dakota": {
@@ -1509,6 +1673,10 @@ var state_data = {
         "net": {
             "data": 132,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 211324,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Tennessee": {
@@ -1545,6 +1713,10 @@ var state_data = {
         "net": {
             "data": 367,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 1497611,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Texas": {
@@ -1581,6 +1753,10 @@ var state_data = {
         "net": {
             "data": -14567,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 7211771,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Utah": {
@@ -1617,6 +1793,10 @@ var state_data = {
         "net": {
             "data": 4508,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 912496,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Vermont": {
@@ -1653,6 +1833,10 @@ var state_data = {
         "net": {
             "data": 1137,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 119923,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Virginia": {
@@ -1689,6 +1873,10 @@ var state_data = {
         "net": {
             "data": 568,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 1870422,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Washington": {
@@ -1725,6 +1913,10 @@ var state_data = {
         "net": {
             "data": -341,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 1611842,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "West Virginia": {
@@ -1761,6 +1953,10 @@ var state_data = {
         "net": {
             "data": 694,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 379596,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Wisconsin": {
@@ -1797,6 +1993,10 @@ var state_data = {
         "net": {
             "data": -654,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 1294626,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     },
     "Wyoming": {
@@ -1833,6 +2033,10 @@ var state_data = {
         "net": {
             "data": 146,
             "description": "# of students entering compared to leaving"
+        },
+        "population": {
+            "data": 138895,
+            "description": "Approx. juvenile (<18) population of state in 2015"
         }
     }
 };

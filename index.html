@@ -3,15 +3,15 @@
 <head>
     <title>Flow of College Students from State to State</title>
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script src="stateshighres.js"></script>
+    <script src="state_location_data.js"></script>
     <script src="Data/state_data.js"></script>
 </head>
 
 <body>
     <script>
         // Build the map
-        var width = 1000,
-            height = 580;
+        var width = 1000;
+        height = 500;
 
         var svg = d3.select("body")
             .append("svg")
@@ -20,14 +20,12 @@
 
         var g = svg.append("g");
 
-        var albersProjection = d3.geo.albers()
+        var projection = d3.geo.albersUsa()
             .scale(1000)
-            .rotate([100, 0])
-            .center([0, 35])
             .translate([width / 2, height / 2]);
 
         var geoPath = d3.geo.path()
-            .projection(albersProjection);
+            .projection(projection);
 
         g.selectAll("path")
             .data(stateshighres.features)
@@ -38,13 +36,12 @@
 
         function getFill(d) {
             var name = d.properties.NAME;
-            if (name == "Puerto Rico") { // No AP data
-                return "#ccc";
-            }
             var data = state_data[name];
-            var fill = data["net"].data;
-            console.log(255-fill);
-            return "rgb(" + (255 - fill) + ", 0, " + fill + ")";
+            var leavingFactor = data["leaving"].data.num / data["population"].data;
+            var enteringFactor = data["entering"].data / data["population"].data;
+            var blue = Math.floor(leavingFactor * 100 * 255);
+            var red = Math.floor(enteringFactor * 100 * 255);
+            return "rgb(" + red + ", 0, " + blue + ")";
         }
     </script>
 </body>
