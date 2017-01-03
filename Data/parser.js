@@ -45,11 +45,11 @@ for (var row = 5; row < 56; row++) { // Rows 5-55 contain data
 
     data[state] = info;
 }
-
-fs.writeFile("state_data.json", JSON.stringify(data), function(err) {
+var contents = "var state_data = " + JSON.stringify(data) + ";";
+fs.writeFile("state_data.js", contents, function(err) {
     if (!err) {
         console.log("Written to file.");
     } else {
         console.log(err);
     }
-})
+});
