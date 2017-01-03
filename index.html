@@ -9,6 +9,24 @@
 
 <body>
     <script>
+        // Calculate data set info
+        var net_info = {},
+            maxVal = -Infinity,
+            minVal = Infinity;
+        for (var state in state_data) {
+            if (state_data.hasOwnProperty(state)) {
+                n = state_data[state]["net"].data;
+                if (n > maxVal) {
+                    maxVal = n;
+                }
+                if (n < minVal) {
+                    minVal = n;
+                }
+            }
+        }
+        net_info["min"] = minVal;
+        net_info["max"] = maxVal;
+
         // Build the map
         var width = 1000;
         height = 500;
@@ -34,14 +52,14 @@
             .attr("fill", getFill)
             .attr("d", geoPath);
 
+
         function getFill(d) {
             var name = d.properties.NAME;
             var data = state_data[name];
-            var leavingFactor = data["leaving"].data.num / data["population"].data;
-            var enteringFactor = data["entering"].data / data["population"].data;
-            var blue = Math.floor(leavingFactor * 100 * 255);
-            var red = Math.floor(enteringFactor * 100 * 255);
-            return "rgb(" + red + ", 0, " + blue + ")";
+            var net = data["net"].data;
+            net = (net > 0) ? Math.floor(((net * 1.0) / net_info["max"]) * 255) : Math.floor((net * 1.0) / net_info["min"] * 255);
+            console.log(net)
+            return "rgb(" + (-1 * net) + ", 0, " + net + ")";
         }
     </script>
 </body>
