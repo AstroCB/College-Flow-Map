@@ -13,7 +13,7 @@ There are some screenshots below, but a live version is available [on my website
 [![Students entering](Screenshots/Entering.png)](Screenshots/Entering.png)
 [![Students staying](Screenshots/Staying.png)](Screenshots/Staying.png)
 
-## Data Compilation Process
+## Data compilation
 Collecting the data for this visualization was a bit of a sporadic process, but I'll attempt to summarize it.
 
 I started by downloading a copy of the College Board's data in an Excel file, which is available in this repository under the Data folder.
@@ -22,7 +22,7 @@ If I wanted to use this data in my visualization, I needed to store it in a form
 
 Lastly, I needed a map of states to display the information, so I used [this GeoJSON data](https://raw.githubusercontent.com/AstroCB/College-Flow-Map/master/state_location_data.js), which was converted from the US Census Bureau's [original SHP files from the 2010 Census](https://www.census.gov/geo/maps-data/data/tiger-cart-boundary.html) by Eric Celeste [here](http://eric.clst.org/Stuff/USGeoJSON). I passed this information to D3 and used an [Albers projection](https://en.wikipedia.org/wiki/Albers_projection) to plot it as a map (which, coincidentally, is the same projection that the Census Bureau uses for all of its data).
 
-## How it Works
+## How it works
 On the simplest level, it searches the JSON College Board data for each state's `entering`, `leaving`, and `in_state` fields, then maps those to a continuous RGB distribution based on their average values (which were computed beforehand using the data and are listed in the `map.js` file).
 
 More specifically, each `entering`, `leaving`, and `in_state` field is balanced by its average value centered around zero and then mapped to an `enteringFactor`, `leavingFactor`, and `stayingFactor`. This mapping occurs by taking each balanced field as a proportion of 255 (the max value of an RGB entry) and then multiplying it by an arbitrary constant to make the distribution more visible onscreen (as most of the data is not displaced very far from its median, so it would otherwise be a very subtle discoloration).
