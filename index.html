@@ -40,18 +40,70 @@
             -webkit-appearance: none;
             padding: 1px;
         }
+
+        #help {
+            font-size: 9pt;
+            vertical-align: super;
+            cursor: pointer;
+        }
+        /* Modal */
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .modal-desc {
+            display: none;
+        }
+
+        .leave-desc {
+            display: block;
+            /* Visible by default */
+        }
+        #source {
+          display: block;
+        }
     </style>
 </head>
 
 <body>
     <h1>
       Number of Students
-      <select id="selection" onchange="toggle();">
+      <select id="selection">
         <option value="leave">Leaving</option><option value="enter">Entering</option><option value="stay">Staying in</option>
       </select>
       Each State for College
+      <span id="help">?</span>
     </h1>
     <br/>
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <p class="modal-desc leave-desc">This map displays the relative numbers of outbound college students from each state, defined as a student who is a resident of that given state but is attending college in a different state.</p>
+            <p class="modal-desc enter-desc">This map displays the relative numbers of inbound college students entering each state, defined as a student who is a resident of a different state but is attending college in that given state.</p>
+            <p class="modal-desc stay-desc">This map displays the relative numbers of students remaining within their residential state for college.</p>
+            <p class="modal-desc stay-desc">Note: The average percentage of students remaining in-state for college in the US is exceptionally high and thus states with lower percentages are displayed as closer to black than they are to blue in this representation since the data is
+                so skewed toward the higher end of the spectrum for this particular scenario.</p>
+            <p class="modal-desc" id="source">This information was compiled from the <a href="https://research.collegeboard.org/programs/ap/data/archived/ap-2015">College Board's 2015 data set</a>. A PDF version of the data used is available <a href="https://secure-media.collegeboard.org/digitalServices/pdf/research/2015/College-Report-by-State-2015.pdf">here</a>,
+                or you can download the <a href="/Data/College-Report-by-State-2015">Excel sheet</a> I used. More detailed information about the data and the process I used to create this visualization is available <a href="https://github.com/AstroCB/College-Flow-Map">on GitHub</a>.</p>
+        </div>
+    </div>
     <script>
         // Build the map
         var width = 1000;
@@ -97,18 +149,59 @@
             var staying = (data["in_state"].data.perc - avgLeavingPerc) / 100;
             var stayingFactor = Math.floor(staying * 2 * 255);
             console.log(stayingFactor)
-            switch(currentFactor) {
-              case "leave": return "rgb(" + leavingFactor + ", 0, " + (-1 * leavingFactor) + ")"; break;
-              case "enter": return "rgb(" + enteringFactor + ", 0, " + (-1 * enteringFactor) + ")"; break;
-              case "stay": return "rgb(" + stayingFactor + ", 0, " + (-1 * stayingFactor) + ")"; break;
-              default: console.log("Factor case not recognized"); return "rgb(0,0,0)"; break;
+            switch (currentFactor) {
+                case "leave":
+                    return "rgb(" + leavingFactor + ", 0, " + (-1 * leavingFactor) + ")";
+                    break;
+                case "enter":
+                    return "rgb(" + enteringFactor + ", 0, " + (-1 * enteringFactor) + ")";
+                    break;
+                case "stay":
+                    return "rgb(" + stayingFactor + ", 0, " + (-1 * stayingFactor) + ")";
+                    break;
+                default:
+                    console.log("Factor case not recognized");
+                    return "rgb(0,0,0)";
+                    break;
             }
         }
 
         function toggle() {
             var current = document.getElementById("selection").value;
             currentFactor = current;
+
+            var leavenodes = document.getElementsByClassName("leave-desc");
+            var enternodes = document.getElementsByClassName("enter-desc");
+            var staynodes = document.getElementsByClassName("stay-desc");
+            switch (currentFactor) {
+                case "leave":
+                    setvis(leavenodes, enternodes, staynodes);
+                    break;
+                case "enter":
+                    setvis(enternodes, leavenodes, staynodes);
+                    break;
+                case "stay":
+                    setvis(staynodes, enternodes, leavenodes);
+                    break;
+                default:
+                    console.log("Factor case not recognized");
+                    break;
+            }
+
             recalc();
+        }
+        document.getElementById("selection").addEventListener("change", toggle);
+
+        function setvis(vis, invis1, invis2) {
+            for (var i = 0; i < vis.length; i++) {
+                vis[i].style.display = "block";
+            }
+            for (var j = 0; j < invis1.length; j++) {
+                invis1[j].style.display = "none";
+            }
+            for (var x = 0; x < invis2.length; x++) {
+                invis2[x].style.display = "none";
+            }
         }
 
         function recalc() {
@@ -119,6 +212,15 @@
                 .append("path")
                 .attr("fill", getFill)
                 .attr("d", geoPath);
+        }
+        // Modal
+        document.getElementById("help").addEventListener("click", function() {
+            document.getElementById("modal").style.display = "block";
+        });
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         }
     </script>
     <div id="scale"><span id="left" class="indicator">Less than average</span><span id="right" class="indicator">Greater than average</span></div><br/>
