@@ -41,7 +41,7 @@ function getFill(d) {
     var leavingFactor = Math.floor(leaving * 5 * 255);
     var staying = (data["in_state"].data.perc - avgLeavingPerc) / 100;
     var stayingFactor = Math.floor(staying * 2 * 255);
-    console.log(stayingFactor)
+
     switch (currentFactor) {
         case "leave":
             return "rgb(" + leavingFactor + ", 0, " + (-1 * leavingFactor) + ")";

@@ -52,4 +52,4 @@ exports.pops = {
     "West Virginia": 379596,
     "Wisconsin": 1294626,
     "Wyoming": 138895
-}
+};
