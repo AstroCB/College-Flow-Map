@@ -5,10 +5,50 @@
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="state_location_data.js"></script>
     <script src="Data/state_data.js"></script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, sans-serif;
+        }
+
+        #scale {
+            width: 600px;
+            height: 30px;
+            margin-top: 10px;
+            background: linear-gradient(to right, blue, black, red);
+        }
+
+        h1 {
+            margin-bottom: 0;
+        }
+
+        .indicator {
+            color: white;
+            padding: 4px;
+        }
+
+        #left {
+            float: left;
+        }
+
+        #right {
+            float: right;
+        }
+
+        #selection {
+            font-size: inherit;
+            background: transparent;
+            -webkit-appearance: none;
+            padding: 1px;
+        }
+    </style>
 </head>
 
 <body>
-    <button name="toggle" onclick="toggle();">Toggle leaving/entering</button><label for="toggle" id="label">Leaving</label><br/>
+    <h1>Number of Students
+      <select id="selection" onchange="toggle();">
+      <option>Leaving</option><option>Entering</option></select> Each State for College
+    </h1>
+    <br/>
     <script>
         nums = [];
         for (var st in state_data) {
@@ -58,7 +98,7 @@
             var data = state_data[name];
             var entering = data["entering"].data / totalLeaving - avgLeavingFactor; // 0.02 is "average"
             arr.push(entering);
-            var enteringFactor = Math.floor(entering * 50 * 255);
+            var enteringFactor = Math.floor(entering * 45 * 255);
             var leaving = (data["leaving"].data.perc - avgLeavingPerc) / 100;
             var leavingFactor = Math.floor(leaving * 5 * 255);
             console.log(leaving);
@@ -70,13 +110,10 @@
         }
 
         function toggle() {
-            showLeave = !showLeave;
-            showEnter = !showEnter;
-            if (showEnter) {
-                document.getElementById("label").innerText = "Entering";
-            } else {
-                document.getElementById("label").innerText = "Leaving";
-            }
+            var current = document.getElementById("selection").value;
+            showLeave = (current == "Leaving");
+            showEnter = (current == "Entering");
+            console.log(showLeave);
             recalc();
         }
 
@@ -90,6 +127,7 @@
                 .attr("d", geoPath);
         }
     </script>
+    <div id="scale"><span id="left" class="indicator">Less than average</span><span id="right" class="indicator">Greater than average</span></div><br/>
 </body>
 
 </html>
